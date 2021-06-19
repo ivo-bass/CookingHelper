@@ -12,5 +12,8 @@ class Meal(models.Model):
         null=True,
     )
 
+    def __str__(self):
+        return self.type
+
     def is_in_time_range(self, time):
         return self.start_time <= time <= self.end_time

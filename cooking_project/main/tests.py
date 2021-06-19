@@ -1,5 +1,3 @@
 from django.test import TestCase
 
-
-# TestsClass here
-
+# Create your tests here.
