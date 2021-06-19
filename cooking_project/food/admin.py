@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from cooking_project.foods_app.models import Meal, Coarse, Food, Garnish
+from cooking_project.food.models import Meal, Coarse, Food, Garnish
 
 
 @admin.register(Meal)

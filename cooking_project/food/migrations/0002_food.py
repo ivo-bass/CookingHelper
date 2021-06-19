@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('foods_app', '0001_initial'),
+        ('food', '0001_initial'),
     ]
 
     operations = [
@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=30)),
-                ('type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='foods_app.coarse')),
+                ('type', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='food.coarse')),
             ],
         ),
     ]
