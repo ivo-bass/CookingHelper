@@ -16,6 +16,7 @@ class CoarseAdmin(admin.ModelAdmin):
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):
     list_display = ('name', 'type',)
+    list_filter = ('needs_garnish', 'vegetarian', 'type',)
 
 
 @admin.register(Garnish)

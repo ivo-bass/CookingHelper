@@ -11,10 +11,17 @@ class Food(models.Model):
         Coarse,
         on_delete=models.CASCADE,
     )
+    needs_garnish = models.BooleanField(
+        default=False,
+    )
+    vegetarian = models.BooleanField(
+        default=False,
+    )
     image = models.ImageField(
         upload_to='static/images',
         verbose_name='food image',
         null=True,
+        blank=True,
     )
 
     def __str__(self):
