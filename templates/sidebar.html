@@ -1,28 +1,161 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-        <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap"></use>
+{% url 'index' as index %}
+{% url 'test' as test %}
+
+
+{#<div class="container-fluid">#}
+{#    <div class="row flex-nowrap">#}
+{#        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">#}
+{#            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">#}
+{#                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">#}
+{#                    <span class="fs-5 d-none d-sm-inline">Menu</span>#}
+{#                </a>#}
+{#                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">#}
+{#                    <li class="nav-item">#}
+{#                        <a href="#" class="nav-link align-middle px-0">#}
+{#                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">#}
+{#                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>#}
+{#                        <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">#}
+{#                            <li class="w-100">#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1 </a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2 </a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#" class="nav-link px-0 align-middle">#}
+{#                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">#}
+{#                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>#}
+{#                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">#}
+{#                            <li class="w-100">#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 1</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Item</span> 2</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">#}
+{#                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>#}
+{#                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">#}
+{#                            <li class="w-100">#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+{#                    <li>#}
+{#                        <a href="#" class="nav-link px-0 align-middle">#}
+{#                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#                <hr>#}
+{#                <div class="dropdown pb-4">#}
+{#                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                        <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">#}
+{#                        <span class="d-none d-sm-inline mx-1">loser</span>#}
+{#                    </a>#}
+{#                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">#}
+{#                        <li><a class="dropdown-item" href="#">New project...</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Settings</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Profile</a></li>#}
+{#                        <li>#}
+{#                            <hr class="dropdown-divider">#}
+{#                        </li>#}
+{#                        <li><a class="dropdown-item" href="#">Sign out</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col py-3">#}
+{#            Content area...#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+
+<div class="sidebar d-flex flex-column flex-shrink-0 p-3" id="mySidebar">
+    <a class="closebtn" id="closebtn" hidden onclick="function closeNav() {
+        document.getElementById('mySidebar').style.width = '5%';
+        document.getElementById('main').style.marginLeft = '5%';
+        document.getElementById('closebtn').hidden = true;
+        document.getElementById('openbtn').hidden = false;
+        let elements = document.getElementsByClassName('nav-link');
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            element.style.fontSize = '0';
+        }
+    }
+    closeNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x"
+             viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
         </svg>
-        <span class="fs-4">Sidebar</span>
     </a>
+    <a class="openbtn" id="openbtn" onclick="function openNav() {
+        document.getElementById('mySidebar').style.width = '15%';
+        document.getElementById('main').style.marginLeft = '15%';
+        document.getElementById('closebtn').hidden = false;
+        document.getElementById('openbtn').hidden = true;
+        let elements = document.getElementsByClassName('nav-link');
+        for (let i = 0; i < elements.length; i++) {
+            let element = elements[i];
+            element.style.fontSize = '1.2rem';
+        }
+    }
+    openNav()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+             viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+        </svg>
+    </a>
+    {#    <a href="{% url 'index' %}" class="d-flex align-items-start mb-3 mb-md-0 me-md-auto">#}
+    {#        <span class="fs-4">Помощник</span>#}
+    {#    </a>#}
     <hr>
     <ul class="nav nav-pills flex-column mb-lg-auto">
         <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                    <use xlink:href="#home"></use>
+            <a href="{{ index }}"
+               class="nav-link {% if request.path == index %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house"
+                     viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"></path>
+                    <path fill-rule="evenodd"
+                          d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"></path>
                 </svg>
-                Home
+                Начало
             </a>
         </li>
-        {#        <li>#}
-        {#            <a href="#" class="nav-link text-white">#}
-        {#                <svg class="bi me-2" width="16" height="16">#}
-        {#                    <use xlink:href="#speedometer2"></use>#}
-        {#                </svg>#}
-        {#                Dashboard#}
-        {#            </a>#}
-        {#        </li>#}
+        <li>
+            <a href="{{ test }}"
+               class="nav-link {% if request.path == test %}active{% endif %}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                     class="bi bi-receipt-cutoff" viewBox="0 0 16 16">
+                    <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zM11.5 4a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1zm0 2a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"></path>
+                    <path d="M2.354.646a.5.5 0 0 0-.801.13l-.5 1A.5.5 0 0 0 1 2v13H.5a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H15V2a.5.5 0 0 0-.053-.224l-.5-1a.5.5 0 0 0-.8-.13L13 1.293l-.646-.647a.5.5 0 0 0-.708 0L11 1.293l-.646-.647a.5.5 0 0 0-.708 0L9 1.293 8.354.646a.5.5 0 0 0-.708 0L7 1.293 6.354.646a.5.5 0 0 0-.708 0L5 1.293 4.354.646a.5.5 0 0 0-.708 0L3 1.293 2.354.646zm-.217 1.198.51.51a.5.5 0 0 0 .707 0L4 1.707l.646.647a.5.5 0 0 0 .708 0L6 1.707l.646.647a.5.5 0 0 0 .708 0L8 1.707l.646.647a.5.5 0 0 0 .708 0L10 1.707l.646.647a.5.5 0 0 0 .708 0L12 1.707l.646.647a.5.5 0 0 0 .708 0l.509-.51.137.274V15H2V2.118l.137-.274z"></path>
+                </svg>
+                Рецепти
+            </a>
+        </li>
         {#        <li>#}
         {#            <a href="#" class="nav-link text-white">#}
         {#                <svg class="bi me-2" width="16" height="16">#}
@@ -52,8 +185,8 @@
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
            data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>mdo</strong>
+            {#            <img src="" alt="" width="32" height="32" class="rounded-circle me-2">#}
+            <strong>ivo_bass</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="#">New project...</a></li>

@@ -2,19 +2,88 @@
 
 {% block content %}
 
-<ul>
-    {% for choice in choices %}
-        <li>{{ choice }}</li>
-    {% endfor %}
-</ul>
-<form method="post">
-    <h3>Form</h3>
-    {% csrf_token %}
-    <hr/>
-    {{ form.errors }}
-    {{ form }}
-    <hr/>
-    <button class="btn btn-outline-success">Submit</button>
-</form>
+    <div class="row row-cols-lg-3 row-cols-sm-1 align-items-start align-content-between">
 
+        <div class="card mb-lg-5">
+            <div class="card-header text-center">
+                <h3>Избрани ястия</h3>
+            </div>
+            <hr/>
+
+            <div class="card-body">
+                <div class="card-text">
+                    <ul>
+                        {% for choice in choices %}
+                            <li>{{ choice }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-lg-5">
+            <div class="card-header text-center">
+                <h3>Избрани ястия</h3>
+            </div>
+            <hr/>
+
+            <div class="card-body">
+                <div class="card-text">
+                    <ul>
+                        {% for choice in choices %}
+                            <li>{{ choice }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-lg-5">
+            <div class="card-header text-center">
+                <h3>Избрани ястия</h3>
+            </div>
+            <hr/>
+
+            <div class="card-body">
+                <div class="card-text">
+                    <ul>
+                        {% for choice in choices %}
+                            <li>{{ choice }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header text-center">
+                <h3>Form</h3>
+            </div>
+            <hr/>
+
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.errors }}
+                    {{ form }}
+                    <hr/>
+                    <button class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header text-center">
+                <h3>Манджа на късмет</h3>
+            </div>
+            <hr/>
+
+            <div class="card-body">
+                    <a href="{% url 'suggest' %}">
+                        <button class="btn btn-success">Предложи</button>
+                    </a>
+            </div>
+        </div>
+
+    </div>
 {% endblock %}

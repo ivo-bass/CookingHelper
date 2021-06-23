@@ -1,13 +1,95 @@
 .main {
-    margin-left: 20vh;
-    padding: 5vh;
+    margin-left: 5%;
     z-index: 2;
+    transition: margin-left .5s;
+    padding: 20px;
 }
 
-.d-flex.flex-column {
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/*#main {*/
+/*    transition: margin-left .5s; !* If you want a transition effect *!*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.d-flex.flex-column {*/
+/*    background: var(--bs-dark-purple);*/
+/*    border: 1px solid var(--bs-dark-purple);*/
+/*    border-radius: 0.5rem;*/
+/*    box-shadow: 10px 0 10px 5px rgba(29, 32, 67, 0.5);*/
+/*    height: 100%;*/
+/*    width: 20%;*/
+/*    position: fixed;*/
+/*    z-index: 1;*/
+/*}*/
+
+html {
+    font-size: 100%
+}
+
+/* The sidebar menu */
+.sidebar {
+    background: var(--bs-dark-purple);
+    border: 1px solid var(--bs-dark-purple);
+    border-radius: 0.5rem;
+    box-shadow: 10px 0 10px 5px rgba(29, 32, 67, 0.5);
     height: 100%;
-    width: 20vh;
+    width: 5%;
     position: fixed;
     z-index: 1;
+    top: 0;
+    left: 0;
+    align-items: center;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 50px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 
+.sidebar a {
+    /*padding: 8px 8px 8px 32px;*/
+    text-decoration: none;
+    font-size: 0;
+    color: var(--bs-font-color-primary);
+    display: block;
+    transition: 0.3s;
+}
+
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    color: var(--bs-font-color-primary);
+}
+
+.sidebar .closebtn:hover {
+    color: var(--bs-danger);
+    cursor: pointer;
+}
+
+.sidebar .openbtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 30px;
+    color: var(--bs-font-color-primary);
+}
+
+.sidebar .openbtn:hover {
+    cursor: pointer;
+    color: var(--bs-success);
+
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+}

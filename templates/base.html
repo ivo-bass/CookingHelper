@@ -14,9 +14,19 @@
 </head>
 <body>
 
-{#{% include 'navbar.html' %}#}
 {% include 'sidebar.html' %}
-<div class="main">
+
+<div class="main" id="main">
+    {% include 'navbar.html' %}
+
+{#    <button class="btn-outline-success" onclick="function openNav() {#}
+{#  document.getElementById('mySidebar').style.width = '20%';#}
+{#  document.getElementById('main').style.marginLeft = '20%';#}
+{#        }#}
+{#        openNav()">&#9776; Open Sidebar#}
+{#    </button>#}
+
+
     {% block content %}
     {% endblock %}
 
@@ -27,5 +37,6 @@
 
 
 {#{% include 'footer.html' %}#}
+<script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>
